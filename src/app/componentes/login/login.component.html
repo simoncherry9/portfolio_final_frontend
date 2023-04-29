@@ -1,1 +1,24 @@
-<p>login works!</p>
+<div class="container mt-5 wrapper animate__animated animate__fadeInDown">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <img class="logo mt-2 mb-4" src="../../../assets/images/login/icon_login.png" alt="Login">
+                    <h2>Iniciar sesón</h2>
+                    <form>
+                        <div class="form-floating mb-3 mt-3">
+                            <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Correo electrónico</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-4 btn-lg mb-4">Ingresar</button>
+                        <p>¿No tienes una cuenta? <a routerLink="/registrar-usuario">Registrarme</a>.</p>
+                        <a class="mt-2">Recuperar contraseña</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
