@@ -18,6 +18,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { VerificarCorreoComponent } from './componentes/verificar-correo/verificar-correo.component';
+import { ListaUsuarioComponent } from './componentes/lista-usuario/lista-usuario.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { VerificarCorreoComponent } from './componentes/verificar-correo/verific
     MenuComponent,
     RecuperarPasswordComponent,
     RegistrarUsuarioComponent,
-    VerificarCorreoComponent
+    VerificarCorreoComponent,
+    ListaUsuarioComponent
   ],
   imports: [
     BrowserModule,
