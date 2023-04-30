@@ -15,6 +15,9 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { AptitudesComponent } from './componentes/aptitudes/aptitudes.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { RecuperarPasswordComponent } from './componentes/recuperar-password/recuperar-password.component';
+import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
+import { VerificarCorreoComponent } from './componentes/verificar-correo/verificar-correo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { MenuComponent } from './componentes/menu/menu.component';
     ProyectosComponent,
     PortfolioComponent,
     AptitudesComponent,
-    MenuComponent
+    MenuComponent,
+    RecuperarPasswordComponent,
+    RegistrarUsuarioComponent,
+    VerificarCorreoComponent
   ],
   imports: [
     BrowserModule,
