@@ -20,6 +20,8 @@ import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/regis
 import { VerificarCorreoComponent } from './componentes/verificar-correo/verificar-correo.component';
 import { ListaUsuarioComponent } from './componentes/lista-usuario/lista-usuario.component';
 import { EditarComponent } from './componentes/editar/editar.component';
+import { SignInComponent } from './componentes/sign-in/sign-in.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { EditarComponent } from './componentes/editar/editar.component';
     RegistrarUsuarioComponent,
     VerificarCorreoComponent,
     ListaUsuarioComponent,
-    EditarComponent
+    EditarComponent,
+    SignInComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
