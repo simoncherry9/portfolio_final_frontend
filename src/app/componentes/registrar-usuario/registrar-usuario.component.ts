@@ -13,6 +13,7 @@ export class RegistrarUsuarioComponent implements OnInit {
   username: string = '';
   password: string = '';
   confirmPassword: string = '';
+  loading: boolean = false;
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
@@ -42,9 +43,15 @@ export class RegistrarUsuarioComponent implements OnInit {
       password: this.password
     }
 
+    this.loading = true;
+
     this._userService.signIn(user).subscribe(data => {
+      this.loading = false;
       this.toastr.success("El usuario " + this.username + " fue registrado con exito", "Usuario registrado");
       this.router.navigate(['/login']);
+    }, error => {
+      console.log(error);
+      this.loading = false;
     })
 
   }

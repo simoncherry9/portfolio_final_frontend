@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
             <div class="card text-center">
-                <div class="card-body">
+                <div *ngIf="!loading" class="card-body">
                     <img class="logo mt-2 mb-4" src="../../../assets/images/login/icon_login.png" alt="Login">
                     <h2>Registrarme</h2>
                     <form>
@@ -22,6 +22,7 @@
                         <button type="button" class="btn btn-secondary mt-4 btn-lg mb-4" [routerLink]="['/login']" routerLinkActive="router-link-active" >Volver</button>
                     </form>
                 </div>
+                <app-spinner *ngIf="loading"></app-spinner>
             </div>
         </div>
     </div>
