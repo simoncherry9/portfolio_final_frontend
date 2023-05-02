@@ -38,3 +38,12 @@
     color: var(--color-2);
     padding: 0 .5rem;
 }
+
+.section-1 {
+    padding: .5rem 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+    letter-spacing: .2px;
+    color: #ffffffc2;
+}
