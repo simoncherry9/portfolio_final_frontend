@@ -1,1 +1,4 @@
-export const environment = {};
+export const environment = {
+    production: false,
+    endpoint: 'http://localhost:3001/',
+};
