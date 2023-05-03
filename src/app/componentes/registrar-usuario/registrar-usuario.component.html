@@ -7,19 +7,24 @@
                     <h2>Registrarme</h2>
                     <form>
                         <div class="form-floating mb-3 mt-3">
-                            <input type="text" [(ngModel)]="username" name="user" class="form-control" placeholder="Ingrese usuario">
+                            <input type="text" [(ngModel)]="username" name="user" class="form-control"
+                                placeholder="Ingrese usuario">
                             <label>Usuario</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" [(ngModel)]="password" name="pass" class="form-control" placeholder="Ingrese contraseña">
+                            <input type="password" [(ngModel)]="password" name="pass" class="form-control"
+                                placeholder="Ingrese contraseña">
                             <label>Contraseña</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" [(ngModel)]="confirmPassword" name="confirmpass" class="form-control mt-3" placeholder="Ingrese contraseña">
+                            <input type="password" [(ngModel)]="confirmPassword" name="confirmpass"
+                                class="form-control mt-3" placeholder="Ingrese contraseña">
                             <label>Repetir contraseña</label>
                         </div>
-                        <button type="button" (click)="addUser()" class="btn btn-primary mt-4 btn-lg mb-4">Registrarme</button>
-                        <button type="button" class="btn btn-secondary mt-4 btn-lg mb-4" [routerLink]="['/login']" routerLinkActive="router-link-active" >Volver</button>
+                        <button type="button" (click)="addUser()"
+                            class="btn btn-primary mt-4 btn-lg mb-4">Registrarme</button>
+                        <button type="button" class="btn btn-secondary mt-4 btn-lg mb-4" [routerLink]="['/login']"
+                            routerLinkActive="router-link-active">Volver</button>
                     </form>
                 </div>
                 <app-spinner *ngIf="loading"></app-spinner>

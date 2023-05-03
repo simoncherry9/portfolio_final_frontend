@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from 'src/app/interfaces/user';
+import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -18,14 +19,15 @@ export class RegistrarUsuarioComponent implements OnInit {
 
   constructor(private toastr: ToastrService,
     private _userService: UserService,
-    private router: Router) {}
+    private router: Router,
+    private _errorService: ErrorService) { }
 
   ngOnInit(): void {
-      
+
   }
 
   addUser() {
-    
+
     // Validamos que el usuario ingrese valores
     if (this.username == '' || this.password == '' || this.confirmPassword == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
@@ -54,18 +56,9 @@ export class RegistrarUsuarioComponent implements OnInit {
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;
-        this.msjError(e);
+        this._errorService.msjError(e);
       }
     })
 
   }
-
-  msjError(e: HttpErrorResponse) {
-    if (e.error.msg) {
-      this.toastr.error(e.error.msg, "Error");
-    } else {
-      this.toastr.error("Ups, ocurrió un error, vuelva a intentarlo mas tarde", "Error");
-    }
-  }
-
 }
