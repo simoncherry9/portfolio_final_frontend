@@ -1,0 +1,13 @@
+.card {
+    box-shadow: 0px 2.8px 2.7px rgba(0, 0, 0, 0.047),
+        0px 7px 6.9px rgba(0, 0, 0, 0.067),
+        0px 14.4px 14.2px rgba(0, 0, 0, 0.083),
+        0px 29.6px 29.2px rgba(0, 0, 0, 0.103),
+        0px 81px 80px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        background-color: #0086fe;
+}
+
+.container {
+    padding: 1rem 0;
+}
