@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
 
   logOut() {
     localStorage.removeItem('token');
-    this.router.navigate(['/portfolio'])
+    this.router.navigate(['/login'])
   }
 
 }

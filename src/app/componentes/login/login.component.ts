@@ -32,11 +32,6 @@ export class LoginComponent implements OnInit {
       return
     }
 
-    if (this.username == 'admin' && this.password) {
-      this.router.navigate(['/editar']);
-      return
-    }
-
     // Creamos el body
     const user: User = {
       username: this.username,
@@ -47,8 +42,7 @@ export class LoginComponent implements OnInit {
     this._userService.login(user).subscribe({
       next: (token) => {
         localStorage.setItem('token', token);
-        this.router.navigate(['/portfolio']);
-        this.toastr.info('No has iniciado sesión como administrador, tendrás algunas funciones de la página bloqueadas como la función "Editar"', "Atención");
+        this.router.navigate(['/editar']);
       },
       error: (e: HttpErrorResponse) => {
         this._errorService.msjError(e);

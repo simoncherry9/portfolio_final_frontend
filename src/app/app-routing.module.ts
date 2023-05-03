@@ -6,13 +6,14 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { LoginComponent } from './componentes/login/login.component';
 import { EditarComponent } from './componentes/editar/editar.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
+import { AuthGuard } from './utils/auth.guard';
 
 const routes: Routes = [
 
   { path: 'portfolio', component:PortfolioComponent },
   { path: 'login', component:LoginComponent },
   { path: '', redirectTo: 'portfolio', pathMatch:'full' },
-  { path: 'editar', component:EditarComponent },
+  { path: 'editar', component:EditarComponent, canActivate:[AuthGuard] },
   { path: 'registrar-usuario', component:RegistrarUsuarioComponent },
   { path: '**', redirectTo: 'portfolio', pathMatch: 'full' },
 
