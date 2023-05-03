@@ -2,7 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { User, UserAdmin } from 'src/app/interfaces/user';
+import { User } from 'src/app/interfaces/user';
 import { ErrorService } from 'src/app/services/error.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -47,7 +47,8 @@ export class LoginComponent implements OnInit {
     this._userService.login(user).subscribe({
       next: (token) => {
         localStorage.setItem('token', token);
-        this.router.navigate(['/portfolio'])
+        this.router.navigate(['/portfolio']);
+        this.toastr.info('No has iniciado sesión como administrador, tendrás algunas funciones de la página bloqueadas como la función "Editar"', "Atención");
       },
       error: (e: HttpErrorResponse) => {
         this._errorService.msjError(e);
