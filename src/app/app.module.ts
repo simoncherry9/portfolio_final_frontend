@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Modulos
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { ToastrModule } from 'ngx-toastr';
 
 // Componentes
@@ -24,6 +24,7 @@ import { AptitudesComponent } from './componentes/aptitudes/aptitudes.component'
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { EditarComponent } from './componentes/editar/editar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { AddTokenInterceptor } from './utils/add-token.interceptor';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,9 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
       preventDuplicates: true,
     })
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
