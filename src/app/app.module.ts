@@ -50,7 +50,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
-      timeOut: 4000,
+      timeOut: 5000,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     })
