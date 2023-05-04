@@ -1,0 +1,21 @@
+<div  class="container card  mt-3 wrapper animate__animated animate__fadeInDown">
+        <div *ngIf="!loading">
+            <div class="form-floating mt-3 ml-4" style="margin-left: 10px; margin-right: 10px;">
+                <div>
+                    <h5 class="text-center">Perfil</h5>
+                        <ul *ngFor="let item of listPersonas">
+                            <li>Nombre: {{ item.nombre }}</li>
+                            <li>Apellido: {{ item.apellido }}</li>
+                            <li>Dirección: {{ item.direccion }}</li>
+                            <li>Nacimiento: {{ item.fechaNacimiento }}</li>
+                            <li>Estado civil: {{ item.estadoCivil }}</li>
+                            <li>Email: {{ item.email }}</li>
+                            <li>Teléfono: {{ item.telefono }}</li>
+                            <li>Profesión: {{ item.profesion }}</li>
+                            <li>Rol: {{ item.rol }}</li>
+                        </ul>
+                </div>
+            </div>
+        <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+</div>
