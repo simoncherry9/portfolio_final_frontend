@@ -22,9 +22,9 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { AptitudesComponent } from './componentes/aptitudes/aptitudes.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
-import { EditarComponent } from './componentes/editar/editar.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AddTokenInterceptor } from './utils/add-token.interceptor';
+import { EditarComponent } from './componentes/editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +40,8 @@ import { AddTokenInterceptor } from './utils/add-token.interceptor';
     PortfolioComponent,
     AptitudesComponent,
     RegistrarUsuarioComponent,
+    SpinnerComponent,
     EditarComponent,
-    SpinnerComponent
   ],
   imports: [
     BrowserModule,

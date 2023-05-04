@@ -13,6 +13,7 @@ export class ErrorService {
     if (e.error.msg) {
       this.toastr.error(e.error.msg, "Error");
     } else {
+      console.error(e);
       this.toastr.error("Ups, ocurrió un error, vuelva a intentarlo mas tarde", "Error");
     }
   }

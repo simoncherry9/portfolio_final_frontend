@@ -4,16 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 // Componentes
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { EditarComponent } from './componentes/editar/editar.component';
 import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/registrar-usuario.component';
 import { AuthGuard } from './utils/auth.guard';
+import { EditarComponent } from './componentes/editar/editar.component';
 
 const routes: Routes = [
 
   { path: 'portfolio', component:PortfolioComponent },
   { path: 'login', component:LoginComponent },
   { path: '', redirectTo: 'portfolio', pathMatch:'full' },
-  { path: 'editar', component:EditarComponent, canActivate:[AuthGuard] },
+  //{ path: 'editar', component:EditarComponent, canActivate:[AuthGuard] },
   { path: 'registrar-usuario', component:RegistrarUsuarioComponent },
   { path: '**', redirectTo: 'portfolio', pathMatch: 'full' },
 

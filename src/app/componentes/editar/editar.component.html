@@ -1,24 +1,18 @@
-<div class="wrapper mt-2 text-center">
-    <h3>Componente editar</h3>
-    <div class="container">
-        <h2>Traemos los datos almacenados de la base de datos</h2>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripcion</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Coca Cola</td>
-                <td>Bebida con gas</td>
-            </tr>
-            <tr>
-                <td>Consolador</td>
-                <td>Para meterlo en el culo</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+<div style="margin-right: 30px; margin-top: 20px;" class="col-12 col-sm-12 col-md-4 col-lg-5 container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
+    <form>
+        <div class="form-floating mb-3 mt-3">
+            <input type="text" [(ngModel)]="name" name="user" class="form-control"
+                placeholder="Ingrese usuario">
+            <label>Nombre</label>
+        </div>
+        <div class="form-floating">
+            <input type="text" [(ngModel)]="description" name="pass" class="form-control"
+                placeholder="Ingrese contraseña">
+            <label>Descripcion</label>
+        </div>
+        <button type="button" (click)="addAptitud()"
+            class="btn btn-primary mt-4 btn-lg mb-4">Agregar</button>
+        <button type="button" class="btn btn-secondary mt-4 btn-lg mb-4" [routerLink]="['/login']"
+            routerLinkActive="router-link-active">Volver</button>
+    </form>
 </div>
