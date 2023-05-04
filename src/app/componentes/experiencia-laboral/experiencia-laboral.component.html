@@ -1,5 +1,28 @@
-<div class="card text-center mt-3">
-    <div class="container">
-        <p>Ejemplo de Experiencia laboral</p>
+<div class="container card mt-3 wrapper animate__animated animate__fadeInDown">
+  <div *ngIf="!loading">
+    <div class="form-floating mb-3 mt-3" style="margin-left: 10px; margin-right: 10px;">
+      <div>
+        <h5 class="text-center">Experiencias</h5>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Empresa</th>
+              <th scope="col">Puesto</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Fecha fin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of listExperiencias">
+              <td>{{ item.empresa }}</td>
+              <td>{{ item.puesto }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td>{{ item.fechaFin }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
+  <app-spinner *ngIf="loading"></app-spinner>
 </div>

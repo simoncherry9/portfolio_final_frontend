@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -52,7 +52,8 @@ export class EditarComponent implements OnInit {
       next: (v) => {
         this.loading = false;
         this.toastr.success("La aptitud " + this.name + " fue cargada con exito", "Aptitud agregada");
-        this.router.navigate(['/aptitudes']);
+        this.router.navigate(['/editar']);
+        location.reload()
       },
       error: (e: HttpErrorResponse) => {
         this.loading = false;
