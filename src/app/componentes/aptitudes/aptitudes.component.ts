@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
 import { Aptitudes } from 'src/app/interfaces/aptitudes';
 import { AptitudesService } from 'src/app/services/aptitudes.service';
 
