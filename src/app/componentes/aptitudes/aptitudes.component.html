@@ -1,9 +1,8 @@
-<div  class="container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
-    <div class="col-lg-6 offset-lg-3">
+<div  class="container card mt-3 wrapper animate__animated animate__fadeInDown">
         <div *ngIf="!loading">
-            <div class="form-floating mb-3 mt-3">
+            <div class="form-floating mb-3 mt-3" style="margin-left: 10px; margin-right: 10px;">
                 <div>
-                    <h5>Aptitudes</h5>
+                    <h5 class="text-center">Aptitudes</h5>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -22,5 +21,4 @@
             </div>
         </div>
         <app-spinner *ngIf="loading"></app-spinner>
-    </div>
 </div>

@@ -1,38 +1,21 @@
-<div  class="container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
+<div  class="container card  mt-3 wrapper animate__animated animate__fadeInDown">
         <div *ngIf="!loading">
             <div class="form-floating mt-3 ml-4" style="margin-left: 10px; margin-right: 10px;">
                 <div>
-                    <h5>Personas</h5>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Dirección</th>
-                                <th scope="col">Nacimiento</th>
-                                <th scope="col">Estado civil</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Profesión</th>
-                                <th scope="col">Rol</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of listPersonas">
-                                <td>{{ item.nombre }}</td>
-                                <td>{{ item.apellido }}</td>
-                                <td>{{ item.direccion }}</td>
-                                <td>{{ item.fechaNacimiento }}</td>
-                                <td>{{ item.estadoCivil }}</td>
-                                <td>{{ item.email }}</td>
-                                <td>{{ item.telefono }}</td>
-                                <td>{{ item.profesion }}</td>
-                                <td>{{ item.rol }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h5 class="text-center">Perfil</h5>
+                        <ul *ngFor="let item of listPersonas">
+                            <li>Nombre: {{ item.nombre }}</li>
+                            <li>Apellido: {{ item.apellido }}</li>
+                            <li>Dirección: {{ item.direccion }}</li>
+                            <li>Nacimiento: {{ item.fechaNacimiento }}</li>
+                            <li>Estado civil: {{ item.estadoCivil }}</li>
+                            <li>Email: {{ item.email }}</li>
+                            <li>Teléfono: {{ item.telefono }}</li>
+                            <li>Profesión: {{ item.profesion }}</li>
+                            <li>Rol: {{ item.rol }}</li>
+                        </ul>
                 </div>
             </div>
-        </div>
         <app-spinner *ngIf="loading"></app-spinner>
     </div>
+</div>
