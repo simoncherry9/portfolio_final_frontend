@@ -1,6 +1,23 @@
-<div class="card" style="margin-top: 30px; margin-bottom: 30px; margin-left: 60px;">
-  <div class="d-flex flex-wrap">
-    <app-perfil style="margin-top: 20px; margin-left: 30px; margin-bottom: 20px;" class="col-12 col-sm-12 col-md-6 col-lg-5"></app-perfil>
-    <app-foto style="margin-top: 20px; margin-left: 50px;" class="col-12 col-sm-12 col-md-6 col-lg-5"></app-foto>
+<div class="card animate__animated animate__fadeInDown" style="width: 20rem; border-radius: 150px;">
+  <img src="../../../assets/images/perfil/foto_perfil.jpg" style="border-radius: 150px;" class="card-img-top" alt="...">
+    <div class="text-center">
+    <p>
+      <button class="btn btn-success" style="margin-top: 50px;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        Perfil
+      </button>
+    </p>
   </div>
+    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+      <div class="card card-body mb-3" style="width: 320px;">
+          <ul class="list-group" style="border-radius: 50px;" *ngFor="let item of listPersonas">
+              <li class="list-group-item text-center" style="background-color: #00b8ff" aria-current="true">{{ item.nombre }} {{ item.apellido }}</li>
+              <li class="list-group-item">{{ item.direccion }}</li>
+              <li class="list-group-item">{{ item.fechaNacimiento }}</li>
+              <li class="list-group-item">{{ item.estadoCivil }}</li>
+              <li class="list-group-item">{{ item.email }}</li>
+              <li class="list-group-item">{{ item.telefono }}</li>
+              <li class="list-group-item">{{ item.profesion }}</li>
+          </ul>
+      </div>
+    </div>
 </div>
