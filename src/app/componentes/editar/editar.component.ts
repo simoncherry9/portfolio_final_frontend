@@ -6,6 +6,7 @@ import { Aptitudes } from 'src/app/interfaces/aptitudes';
 import { ErrorService } from 'src/app/services/error.service';
 import { AptitudesService } from 'src/app/services/aptitudes.service';
 
+
 @Component({
   selector: 'app-editar',
   templateUrl: './editar.component.html',
