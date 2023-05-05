@@ -30,6 +30,8 @@ import { EditarAptitudesComponent } from './componentes/editar-aptitudes/editar-
 import { EditarEducacionComponent } from './componentes/editar-educacion/editar-educacion.component';
 import { EditarProyectosComponent } from './componentes/editar-proyectos/editar-proyectos.component';
 import { EditarPersonaComponent } from './componentes/editar-persona/editar-persona.component';
+import { FotoComponent } from './componentes/foto/foto.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { EditarPersonaComponent } from './componentes/editar-persona/editar-pers
     EditarEducacionComponent,
     EditarProyectosComponent,
     EditarPersonaComponent,
+    FotoComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
