@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵɵqueryRefresh } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -8,11 +8,11 @@ import { AptitudesService } from 'src/app/services/aptitudes.service';
 
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  selector: 'app-editar-aptitudes',
+  templateUrl: './editar-aptitudes.component.html',
+  styleUrls: ['./editar-aptitudes.component.css']
 })
-export class EditarComponent implements OnInit {
+export class EditarAptitudesComponent implements OnInit {
   name: string = '';
   description: string = '';
   loading: boolean = false;

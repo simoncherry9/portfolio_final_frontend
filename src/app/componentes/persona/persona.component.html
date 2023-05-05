@@ -1,21 +1,23 @@
-<div  class="container card  mt-3 wrapper animate__animated animate__fadeInDown">
-        <div *ngIf="!loading">
-            <div class="form-floating mt-3 ml-4" style="margin-left: 10px; margin-right: 10px;">
-                <div>
-                    <h5 class="text-center">Perfil</h5>
-                        <ul *ngFor="let item of listPersonas">
-                            <li>Nombre: {{ item.nombre }}</li>
-                            <li>Apellido: {{ item.apellido }}</li>
-                            <li>Dirección: {{ item.direccion }}</li>
-                            <li>Nacimiento: {{ item.fechaNacimiento }}</li>
-                            <li>Estado civil: {{ item.estadoCivil }}</li>
-                            <li>Email: {{ item.email }}</li>
-                            <li>Teléfono: {{ item.telefono }}</li>
-                            <li>Profesión: {{ item.profesion }}</li>
-                            <li>Rol: {{ item.rol }}</li>
-                        </ul>
-                </div>
-            </div>
-        <app-spinner *ngIf="loading"></app-spinner>
+<div class="card animate__animated animate__fadeInDown" style="width: 20rem; border-radius: 150px;">
+  <img src="../../../assets/images/perfil/foto_perfil.jpg" style="border-radius: 150px;" class="card-img-top" alt="...">
+    <div class="text-center">
+    <p>
+      <button class="btn btn-success" style="margin-top: 50px;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+        Perfil
+      </button>
+    </p>
+  </div>
+    <div class="collapse collapse-horizontal" id="collapseWidthExample">
+      <div class="card card-body mb-3" style="width: 320px;">
+          <ul class="list-group" style="border-radius: 50px;" *ngFor="let item of listPersonas">
+              <li class="list-group-item text-center" style="background-color: #00b8ff" aria-current="true">{{ item.nombre }} {{ item.apellido }}</li>
+              <li class="list-group-item">{{ item.direccion }}</li>
+              <li class="list-group-item">{{ item.fechaNacimiento }}</li>
+              <li class="list-group-item">{{ item.estadoCivil }}</li>
+              <li class="list-group-item">{{ item.email }}</li>
+              <li class="list-group-item">{{ item.telefono }}</li>
+              <li class="list-group-item">{{ item.profesion }}</li>
+          </ul>
+      </div>
     </div>
 </div>

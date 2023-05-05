@@ -15,8 +15,8 @@ export class EducacionService {
     this.myApiUrl = 'api/educacion'
   }
 
-  Crear(educaciones: Educacion): Observable<any> {
-    return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, educaciones);
+  Crear(educacions: Educacion): Observable<any> {
+    return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, educacions);
   }
 
   getEducaciones(): Observable<Educacion[]> {

@@ -8,8 +8,9 @@ import { EducacionService } from 'src/app/services/educacion.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  name: string = '';
-  description: string = '';
+  establecimiento: string = '';
+  nivel: string = '';
+  fechaFin: string = '';
   loading: boolean = false;
   listEducaciones: Educacion[] = []
 

@@ -25,6 +25,11 @@ import { RegistrarUsuarioComponent } from './componentes/registrar-usuario/regis
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { AddTokenInterceptor } from './utils/add-token.interceptor';
 import { EditarComponent } from './componentes/editar/editar.component';
+import { EditarExperienciasComponent } from './componentes/editar-experiencias/editar-experiencias.component';
+import { EditarAptitudesComponent } from './componentes/editar-aptitudes/editar-aptitudes.component';
+import { EditarEducacionComponent } from './componentes/editar-educacion/editar-educacion.component';
+import { EditarProyectosComponent } from './componentes/editar-proyectos/editar-proyectos.component';
+import { EditarPersonaComponent } from './componentes/editar-persona/editar-persona.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,11 @@ import { EditarComponent } from './componentes/editar/editar.component';
     RegistrarUsuarioComponent,
     SpinnerComponent,
     EditarComponent,
+    EditarExperienciasComponent,
+    EditarAptitudesComponent,
+    EditarEducacionComponent,
+    EditarProyectosComponent,
+    EditarPersonaComponent,
   ],
   imports: [
     BrowserModule,
