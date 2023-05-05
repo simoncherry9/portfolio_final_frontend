@@ -1,1 +1,53 @@
-<p>editar-experiencias works!</p>
+<div class="container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
+    <h3 class="mt-3 mb-3">Experiencia laboral</h3>
+    <div>
+      <table class="table table-hover mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Empresa</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha fin</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listExperiencias">
+            <td>{{ item.empresa }}</td>
+            <td>{{ item.puesto }}</td>
+            <td>{{ item.descripcion }}</td>
+            <td>{{ item.fechaFin }}</td>
+            <th>
+              <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <a class="btn btn-success" data-bs-toggle="collapse" href="#multicollapseExample4" role="button" aria-expanded="false" aria-controls="multicollapseExample1">
+          <i class="bi bi-plus-lg"></i>
+        </a>
+      </p>
+      <div class="collapse" style="border-radius: 50px" id="multicollapseExample4">
+        <div class="card card-body mb-3" style="border-radius: 50px">
+          <div class="form-floating mb-3 mt-5">
+            <input type="text" [(ngModel)]="empresa" name="user" class="form-control" placeholder="Empresa">
+            <label>Empresa</label>
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <input type="text" [(ngModel)]="puesto" name="user" class="form-control" placeholder="Puesto">
+            <label>Puesto</label>
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <input type="text" [(ngModel)]="descripcion" name="user" class="form-control" placeholder="Descripción">
+            <label>Descripción</label>
+          </div>
+          <div class="form-floating mb-3 mt-3">
+            <input type="text" [(ngModel)]="fechaFin" name="user" class="form-control" placeholder="Fin">
+            <label>Fin</label>
+          </div>
+          <button type="button" (click)="addExperiencia()" class="btn btn-success btn-lg mt-5">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
