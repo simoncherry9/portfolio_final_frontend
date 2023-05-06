@@ -7,6 +7,8 @@ import { EducacionService } from 'src/app/services/educacion.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
+
+
 export class EducacionComponent implements OnInit {
   establecimiento: string = '';
   nivel: string = '';
