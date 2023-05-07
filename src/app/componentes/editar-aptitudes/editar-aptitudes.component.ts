@@ -61,6 +61,5 @@ export class EditarAptitudesComponent implements OnInit {
         this._errorService.msjError(e);
       }
     })
-
   }
 }
