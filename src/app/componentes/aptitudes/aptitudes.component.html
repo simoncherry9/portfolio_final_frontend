@@ -1,25 +1,11 @@
-<div  class="container card mt-3 wrapper animate__animated animate__fadeInDown">
-        <div *ngIf="!loading">
-            <div class="form-floating mb-3 mt-3" style="margin-left: 10px; margin-right: 10px;">
-                <div>
-                    <h5 class="text-center mt-4">Aptitudes</h5>
-                    <table class="table table-borderless mt-4 mb-4">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Descripcion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let item of listAptitudes">
-                                <td>{{ item.name }}</td>
-                                <td>{{ item.description }}</td>
-                                <td>{{ item.porcentaje }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+<div class="container card mt-3 wrapper animate__animated animate__fadeInDown">
+    <div *ngIf="!loading">
+        <div class="form-floating mb-3 mt-3" style="margin-left: 10px; margin-right: 10px;">
+            <div>
+                <h5 class="text-center mt-4">Aptitudes</h5>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
-        <app-spinner *ngIf="loading"></app-spinner>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
 </div>
