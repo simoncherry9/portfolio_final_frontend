@@ -1,0 +1,29 @@
+<div class="container mt-5 wrapper animate__animated animate__fadeInDown">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div *ngIf="!loading" class="card card-body mb-3" style="border-radius: 50px">
+                <div >
+                    <h5 class="text-center mt-3">Formulario de contacto</h5>
+                </div>
+                <div class="form mb-3 mt-5">
+                    <label class="mb-2">Nombre:</label>
+                    <input type="text" [(ngModel)]="nombre" name="user" class="form-control" placeholder="Nombre">
+                </div>
+                <div class="form mb-3 mt-3">
+                    <label class="mb-2">Correo electrónico:</label>
+                    <input type="text" [(ngModel)]="email" name="user" class="form-control"
+                        placeholder="email@email.com">
+                </div>
+                <label>Mensaje:</label>
+                <div class="form mb-3 mt-3">
+                    <textarea type="text" [(ngModel)]="descripcion" name="user" style="height: 100px; overflow: auto;"
+                        class="form-control" placeholder="Escriba su mensaje aquí..."></textarea>
+                </div>
+                <button type="button" (click)="addFormulario()" class="btn btn-success btn-lg mt-5">Enviar</button>
+                <button type="button" class="btn btn-secondary mt-4 btn-lg mb-4" style="margin-left: 10px;" [routerLink]="['/portfolio']"
+                            routerLinkActive="router-link-active">Volver</button>
+            </div>
+            <app-spinner *ngIf="loading"></app-spinner>
+        </div>
+    </div>
+</div>

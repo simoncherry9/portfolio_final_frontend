@@ -13,7 +13,7 @@ import { AptitudesService } from 'src/app/services/aptitudes.service';
 })
 export class EditarAptitudesComponent {
   aptitudes: Aptitudes = {
-    id : 0,
+    id: 0,
     name: '',
     description: '',
     porcentaje: 0
@@ -29,6 +29,19 @@ export class EditarAptitudesComponent {
   ngOnInit(): void {
     this.getAptitudes();
   }
+
+  deleteAptitud(id: number):void {
+    this._aptitudesService.deleteAptitud(id).subscribe(
+      () => {
+        console.log('Dato eliminado correctamente');
+        // Realiza acciones adicionales después de eliminar el dato, como actualizar la lista de datos.
+      },
+      (error) => {
+        console.error('Error al eliminar el dato:', error);
+        // Maneja el error, muestra un mensaje de error, etc.
+      }
+
+  );}
 
   getAptitudes() {
     this._aptitudesService.getAptitudes().subscribe(data => {
