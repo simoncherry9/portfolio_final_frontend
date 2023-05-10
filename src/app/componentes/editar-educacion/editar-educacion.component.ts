@@ -12,10 +12,13 @@ import { EducacionService } from 'src/app/services/educacion.service';
   templateUrl: './editar-educacion.component.html',
   styleUrls: ['./editar-educacion.component.css']
 })
-export class EditarEducacionComponent implements OnInit {
-  establecimiento: string = '';
-  nivel: string = '';
-  fechaFin: string = '';
+export class EditarEducacionComponent {
+  educacion: Educacion = {
+    id : 0,
+    fechaFin: '',
+    establecimiento: '',
+    nivel: '',
+  }
   loading: boolean = false;
   listEducaciones: Educacion[] = []
 
@@ -37,24 +40,17 @@ export class EditarEducacionComponent implements OnInit {
   addEducacion() {
 
     // Validamos que el usuario ingrese valores
-    if (this.nivel == '' || this.establecimiento == '' || this.fechaFin == '') {
+    if (this.educacion.establecimiento == '' || this.educacion.fechaFin == '' || this.educacion.nivel == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
     }
 
-    // Creamos el objeto 
-    const educacions: Educacion = {
-      nivel: this.nivel,
-      establecimiento: this.establecimiento,
-      fechaFin: this.fechaFin
-    }
-
     this.loading = true;
 
-    this._educacionService.Crear(educacions).subscribe({
+    this._educacionService.Crear(this.educacion).subscribe({
       next: (v) => {
         this.loading = false;
-        this.toastr.success("El establecimiento " + this.establecimiento + " fue cargado con exito", "Educación agregada");
+        this.toastr.success("La educacion en el establecimiento " + this.educacion.establecimiento + " fue cargada con exito", "Educacion agregada");
         this.router.navigate(['/editar']);
         location.reload()
       },
@@ -63,6 +59,19 @@ export class EditarEducacionComponent implements OnInit {
         this._errorService.msjError(e);
       }
     })
+  }
 
+  deleteEducacion(id: number) {
+    this._educacionService.deleteEducacion(id).subscribe(
+      () => {
+        console.log('Educacion eliminada correctamente');
+        location.reload()
+        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
+      },
+      (error) => {
+        console.error('Error al eliminar la educacion', error);
+        // Manejar el error adecuadamente
+      }
+    );
   }
 }

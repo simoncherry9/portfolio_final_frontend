@@ -23,4 +23,9 @@ export class EducacionService {
     return this.http.get<Educacion[]>(`${this.myAppUrl}${this, this.myApiUrl}`)
   }
 
+  deleteEducacion(id: number): Observable<any> {
+    const url = `${this.myAppUrl}${this,this.myApiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
 }
