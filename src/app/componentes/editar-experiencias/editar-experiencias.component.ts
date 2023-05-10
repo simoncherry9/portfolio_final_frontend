@@ -12,11 +12,14 @@ import { ExperienciasService } from 'src/app/services/experiencia.service';
   templateUrl: './editar-experiencias.component.html',
   styleUrls: ['./editar-experiencias.component.css']
 })
-export class EditarExperienciasComponent implements OnInit {
-  empresa: string = '';
-  puesto: string = '';
-  descripcion: string = '';
-  fechaFin: string = '';
+export class EditarExperienciasComponent {
+  experiencia: Experiencia = {
+    id : 0,
+    empresa: '',
+    puesto: '',
+    descripcion: '',
+    fechaFin: '',
+  }
   loading: boolean = false;
   listExperiencias: Experiencia[] = []
 
@@ -37,26 +40,17 @@ export class EditarExperienciasComponent implements OnInit {
 
   addExperiencia() {
 
-    // Validamos que el usuario ingrese valores
-    if (this.empresa == '' || this.puesto == '' || this.descripcion == '' || this.fechaFin == '') {
+    if (this.experiencia.empresa == '' || this.experiencia.puesto == '' || this.experiencia.descripcion == '' || this.experiencia.fechaFin == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
     }
 
-    // Creamos el objeto 
-    const experiencias: Experiencia = {
-      empresa: this.empresa,
-      puesto: this.puesto,
-      descripcion: this.descripcion,
-      fechaFin: this.fechaFin
-    }
-
     this.loading = true;
 
-    this._experienciaService.Crear(experiencias).subscribe({
+    this._experienciaService.Crear(this.experiencia).subscribe({
       next: (v) => {
         this.loading = false;
-        this.toastr.success("La experiencia laboral " + this.puesto + " fue cargada con exito", "Experiencia agregada");
+        this.toastr.success("La experiencia obtenida en empresa " + this.experiencia.empresa + " fue cargada con exito", "Experiencia agregada");
         this.router.navigate(['/editar']);
         location.reload()
       },
@@ -65,6 +59,18 @@ export class EditarExperienciasComponent implements OnInit {
         this._errorService.msjError(e);
       }
     })
-
   }
+
+  deleteExperiencia(id: number) {
+    this._experienciaService.deleteExperiencia(id).subscribe(
+      () => {
+        location.reload()
+        this.toastr.success("La experiencia fue eliminada correctamente", "Experiencia eliminada");
+      },
+      (error) => {
+        this.toastr.error("La experiencia no pudo eliminarse", "Error");
+      }
+    );
+  }
+
 }

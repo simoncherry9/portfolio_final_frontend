@@ -4,21 +4,21 @@
       <table class="table table-hover mt-4">
         <thead>
           <tr>
-            <th scope="col">Establecimiento</th>
-            <th scope="col">Nivel</th>
-            <th scope="col">Fecha fin</th>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Tecnologías</th>
             <th scope="col">Link Repositorio</th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of listProyectos">
-            <td>{{ item.name }}</td>
-            <td>{{ item.description }}</td>
-            <td>{{ item.tecnologias }}</td>
-            <td>{{ item.linkRepo }}</td>
+          <tr *ngFor="let proyecto of listProyectos">
+            <td>{{ proyecto.name }}</td>
+            <td>{{ proyecto.description }}</td>
+            <td>{{ proyecto.tecnologias }}</td>
+            <td>{{ proyecto.linkRepo }}</td>
             <th>
-              <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+              <button type="button" class="btn btn-danger"(click)="deleteProyecto(proyecto.id)"><i class="bi bi-trash3-fill"></i></button>
             </th>
           </tr>
         </tbody>
@@ -31,19 +31,19 @@
       <div class="collapse" style="border-radius: 50px" id="multicollapseExample3">
         <div class="card card-body mb-3" style="border-radius: 50px">
           <div class="form-floating mb-3 mt-5">
-            <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Establecimiento">
+            <input type="text" [(ngModel)]="proyecto.name" name="name" class="form-control" placeholder="Establecimiento">
             <label>Nombre</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="description" name="des" class="form-control" placeholder="Nivel">
+            <input type="text" [(ngModel)]="proyecto.description" name="des" class="form-control" placeholder="Nivel">
             <label>Descripción</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="tecnologias" name="tec" class="form-control" placeholder="Fecha fin">
+            <input type="text" [(ngModel)]="proyecto.tecnologias" name="tec" class="form-control" placeholder="Fecha fin">
             <label>Tecnologias</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="linkRepo" name="repo" class="form-control" placeholder="Repositorio">
+            <input type="text" [(ngModel)]="proyecto.linkRepo" name="repo" class="form-control" placeholder="Repositorio">
             <label>Repositorio</label>
           </div>
           <button type="button" (click)="addProyecto()" class="btn btn-success btn-lg mt-5">Agregar</button>

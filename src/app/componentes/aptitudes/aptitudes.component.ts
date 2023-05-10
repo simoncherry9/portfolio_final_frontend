@@ -26,13 +26,13 @@ export class AptitudesComponent implements OnInit {
       const ctx = document.getElementById('myChart') as HTMLCanvasElement;
       const chartData = {
         datasets: [{
-          data: data.map(item => item.porcentaje), // Array de porcentajes para el gráfico de área polar
-          label: 'Aptitudes',
+          data: data.map(item => item.porcentaje),
+          label: 'Nivel',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1
         }],
-        labels: data.map(item => item.name) // Array de nombres para el gráfico de área polar
+        labels: data.map(item => item.name )
       };
 
       Chart.register(...registerables);

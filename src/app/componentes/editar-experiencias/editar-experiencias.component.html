@@ -12,13 +12,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of listExperiencias">
-            <td>{{ item.empresa }}</td>
-            <td>{{ item.puesto }}</td>
-            <td>{{ item.descripcion }}</td>
-            <td>{{ item.fechaFin }}</td>
+          <tr *ngFor="let experiencia of listExperiencias">
+            <td>{{ experiencia.empresa }}</td>
+            <td>{{ experiencia.puesto }}</td>
+            <td>{{ experiencia.descripcion }}</td>
+            <td>{{ experiencia.fechaFin }}</td>
             <th>
-              <button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>
+              <button type="button" class="btn btn-danger"(click)="deleteExperiencia(experiencia.id)"><i class="bi bi-trash3-fill"></i></button>
             </th>
           </tr>
         </tbody>
@@ -31,19 +31,19 @@
       <div class="collapse" style="border-radius: 50px" id="multicollapseExample4">
         <div class="card card-body mb-3" style="border-radius: 50px">
           <div class="form-floating mb-3 mt-5">
-            <input type="text" [(ngModel)]="empresa" name="user" class="form-control" placeholder="Empresa">
+            <input type="text" [(ngModel)]="experiencia.empresa" name="user" class="form-control" placeholder="Empresa">
             <label>Empresa</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="puesto" name="user" class="form-control" placeholder="Puesto">
+            <input type="text" [(ngModel)]="experiencia.puesto" name="user" class="form-control" placeholder="Puesto">
             <label>Puesto</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="descripcion" name="user" class="form-control" placeholder="Descripción">
+            <input type="text" [(ngModel)]="experiencia.descripcion" name="user" class="form-control" placeholder="Descripción">
             <label>Descripción</label>
           </div>
           <div class="form-floating mb-3 mt-3">
-            <input type="text" [(ngModel)]="fechaFin" name="user" class="form-control" placeholder="Fin">
+            <input type="text" [(ngModel)]="experiencia.fechaFin" name="user" class="form-control" placeholder="Fin">
             <label>Fin</label>
           </div>
           <button type="button" (click)="addExperiencia()" class="btn btn-success btn-lg mt-5">Agregar</button>

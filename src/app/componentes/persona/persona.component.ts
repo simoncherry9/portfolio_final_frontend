@@ -8,19 +8,19 @@ import { PersonasService } from 'src/app/services/persona.service';
   styleUrls: ['./persona.component.css']
 })
 export class PersonaComponent implements OnInit {
-    name: string = '';
-    description: string = '';
-    direccion: string = '';
-    fechaNacimiento: string = '';
-    estadoCivil: string = '';
-    email: string = '';
-    telefono: string = '';
-    profesion: string = '';
-    rol: string= '';
-    loading: boolean = false;
-    listPersonas: Personas[] = []
+  nombre: string = '';
+  apellido: string = '';
+  direccion: string = '';
+  fechaNacimiento: string = '';
+  estadoCivil: string = '';
+  email: string = '';
+  telefono: string = '';
+  profesion: string = '';
+  rol: string = '';
+  loading: boolean = false;
+  listPersonas: Personas[] = [];
 
-  constructor(private _personasService: PersonasService) { }
+  constructor(private _personasService: PersonasService) {}
 
   ngOnInit(): void {
     this.getPersonas();
@@ -29,7 +29,6 @@ export class PersonaComponent implements OnInit {
   getPersonas() {
     this._personasService.getPersonas().subscribe(data => {
       this.listPersonas = data;
-    })
+    });
   }
-
 }

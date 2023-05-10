@@ -16,7 +16,7 @@
             <td>{{ aptitud.description }}</td>
             <td>{{ aptitud.porcentaje }}</td>
             <td>
-              <button type="button">Eliminar</button>
+              <button type="button" class="btn btn-danger"(click)="deleteAptitud(aptitud.id)"><i class="bi bi-trash3-fill"></i></button>
             </td>
           </tr>
         </tbody>

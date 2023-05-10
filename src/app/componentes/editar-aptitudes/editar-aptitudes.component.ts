@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -50,7 +50,6 @@ export class EditarAptitudesComponent {
       next: (v) => {
         this.loading = false;
         this.toastr.success("La aptitud " + this.aptitudes.name + " fue cargada con exito", "Aptitud agregada");
-        this.router.navigate(['/editar']);
         location.reload()
       },
       error: (e: HttpErrorResponse) => {
@@ -59,4 +58,17 @@ export class EditarAptitudesComponent {
       }
     })
   }
+
+  deleteAptitud(id: number) {
+    this._aptitudesService.deleteAptitud(id).subscribe(
+      () => {
+        location.reload()
+        this.toastr.success("La aptitud " + this.aptitudes.name + " fue eliminada con exito", "Aptitud eliminada");
+      },
+      (error) => {
+        this.toastr.error("La aptitud no pudo eliminarse", "Error");
+      }
+    );
+  }
+
 }

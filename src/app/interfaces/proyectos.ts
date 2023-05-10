@@ -1,7 +1,7 @@
 export interface Proyectos {
-    name: string,
-    description: string,
-    tecnologias: string,
-    linkRepo: string
-  }
-  
+  id: number,
+  name: string,
+  description: string,
+  tecnologias: string,
+  linkRepo: string
+}

@@ -23,8 +23,9 @@ export class AptitudesService {
     return this.http.get<Aptitudes[]>(`${this.myAppUrl}${this,this.myApiUrl}`)
   }
 
-  deleteAptitud(id: number) {
-    return this.http.delete(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  deleteAptitud(id: number): Observable<any> {
+    const url = `${this.myAppUrl}${this,this.myApiUrl}/${id}`;
+    return this.http.delete<any>(url);
   }
 
 }
