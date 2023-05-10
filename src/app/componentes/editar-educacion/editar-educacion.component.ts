@@ -51,7 +51,6 @@ export class EditarEducacionComponent {
       next: (v) => {
         this.loading = false;
         this.toastr.success("La educacion en el establecimiento " + this.educacion.establecimiento + " fue cargada con exito", "Educacion agregada");
-        this.router.navigate(['/editar']);
         location.reload()
       },
       error: (e: HttpErrorResponse) => {
@@ -64,7 +63,7 @@ export class EditarEducacionComponent {
   deleteEducacion(id: number) {
     this._educacionService.deleteEducacion(id).subscribe(
       () => {
-        console.log('Educacion eliminada correctamente');
+        this.toastr.success("La educacion en el establecimiento " + this.educacion.establecimiento + " fue eliminada con exito", "Educacion eliminada");
         location.reload()
         // Realizar cualquier otra acción necesaria después de eliminar la aptitud
       },
