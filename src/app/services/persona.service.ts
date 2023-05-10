@@ -15,12 +15,13 @@ export class PersonasService {
     this.myApiUrl = 'api/persona'
   }
 
-  Crear(personas: Personas): Observable <any> {
-    return this.http.post(`${this.myAppUrl}${this.myApiUrl}`, personas);
-  }
-
   getPersonas(): Observable <Personas[]> {
     return this.http.get<Personas[]>(`${this.myAppUrl}${this,this.myApiUrl}`)
+  }
+
+  editPersona(persona: Personas): Observable<Personas> {
+    const url = `${this.myAppUrl}${this.myApiUrl}/${persona.id}`;
+    return this.http.put<Personas>(url, persona);
   }
 
 }

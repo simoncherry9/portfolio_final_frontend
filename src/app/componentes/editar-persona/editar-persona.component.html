@@ -1,13 +1,90 @@
 <div class="container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
-    <h3 class="mt-3 mb-3">Perfil</h3>
-    <ul class="list-group" style="border-radius: 50px;" *ngFor="let item of listPersonas">
-        <li class="list-group-item text-center" style="background-color: #00b8ff" aria-current="true">{{ item.nombre }}
-            {{ item.apellido }}</li>
-        <li class="list-group-item">{{ item.direccion }}</li>
-        <li class="list-group-item">{{ item.fechaNacimiento }}</li>
-        <li class="list-group-item">{{ item.estadoCivil }}</li>
-        <li class="list-group-item">{{ item.email }}</li>
-        <li class="list-group-item">{{ item.telefono }}</li>
-        <li class="list-group-item">{{ item.profesion }}</li>
-    </ul>
+    <div class="card card-body mb-3" style="border-radius: 50px;">
+        <ul class="list-group" style="border-radius: 50px;" *ngFor="let persona of listPersonas">
+            <li class="list-group-item text-center" style="background-color: #00b8ff" aria-current="true">{{
+                persona.nombre }} {{ persona.apellido }}</li>
+            <li class="list-group-item">{{ persona.direccion }}</li>
+            <li class="list-group-item">{{ persona.fechaNacimiento }}</li>
+            <li class="list-group-item">{{ persona.estadoCivil }}</li>
+            <li class="list-group-item">{{ persona.email }}</li>
+            <li class="list-group-item">{{ persona.telefono }}</li>
+            <li class="list-group-item">{{ persona.profesion }}</li>
+        </ul>
+    </div>
+
+    <p>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multicollapseExample10" role="button"
+            aria-expanded="false" aria-controls="multicollapseExample1">
+            <i class="bi bi-pencil"></i>
+        </a>
+    </p>
+    <div class="collapse" style="border-radius: 50px" id="multicollapseExample10">
+        <div class="card card-body mb-3" style="border-radius: 50px">
+            <div class="form-floating mb-3 mt-5">
+
+                <div class="row text-center">
+                    <div class="col-md-12" *ngFor="let persona of listPersonas">
+                      <form (submit)="editPersona(persona)" class="mb-4">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="nombre">Nombre:</label>
+                              <input type="text" id="nombre" [(ngModel)]="persona.nombre" name="nombre" class="form-control">
+                            </div>
+                  
+                            <div class="form-group">
+                              <label for="apellido">Apellido:</label>
+                              <input type="text" id="apellido" [(ngModel)]="persona.apellido" name="apellido" class="form-control">
+                            </div>
+                          </div>
+                          
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="direccion">Direccion:</label>
+                              <input type="text" id="direccion" [(ngModel)]="persona.direccion" name="direccion" class="form-control">
+                            </div>
+                  
+                            <div class="form-group">
+                              <label for="fecha de nacimiento">Fecha de nacimiento:</label>
+                              <input type="text" id="fecga de nacimiento" [(ngModel)]="persona.fechaNacimiento" name="fecha de nacimiento" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="estado civil">Estado civil:</label>
+                              <input type="text" id="estado civil" [(ngModel)]="persona.estadoCivil" name="estado civil" class="form-control">
+                            </div>
+                  
+                            <div class="form-group">
+                              <label for="email">Email:</label>
+                              <input type="text" id="email" [(ngModel)]="persona.email" name="email" class="form-control">
+                            </div>
+                          </div>
+                  
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label for="telefono">Telefono:</label>
+                              <input type="text" id="telefono" [(ngModel)]="persona.telefono" name="telefono" class="form-control">
+                            </div>
+                  
+                            <div class="form-group">
+                              <label for="profesion">Profesion:</label>
+                              <input type="text" id="profesion" [(ngModel)]="persona.profesion" name="profesion" class="form-control">
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <button type="submit" class="btn btn-primary" style="margin-top: 20px;">Editar</button>
+                      </form>
+                    </div>
+                  </div>
+                  
+
+
+            </div>
+        </div>
+    </div>
 </div>

@@ -56,6 +56,7 @@ export class EditarEducacionComponent {
       error: (e: HttpErrorResponse) => {
         this.loading = false;
         this._errorService.msjError(e);
+        this.toastr.error("La educacion no se pudo agregar", "Error");
       }
     })
   }
@@ -65,11 +66,9 @@ export class EditarEducacionComponent {
       () => {
         this.toastr.success("La educacion en el establecimiento " + this.educacion.establecimiento + " fue eliminada con exito", "Educacion eliminada");
         location.reload()
-        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
       },
       (error) => {
-        console.error('Error al eliminar la educacion', error);
-        // Manejar el error adecuadamente
+        this.toastr.error("La educacion no se pudo eliminar", "Error");
       }
     );
   }
