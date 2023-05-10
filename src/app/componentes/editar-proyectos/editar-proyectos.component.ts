@@ -12,15 +12,18 @@ import { ProyectosService } from 'src/app/services/proyectos.service';
   templateUrl: './editar-proyectos.component.html',
   styleUrls: ['./editar-proyectos.component.css']
 })
-export class EditarProyectosComponent implements OnInit {
-    name: string = '';
-    description: string = '';
-    tecnologias: string = '';
-    linkRepo: string = '';
+export class EditarProyectosComponent {
+  proyecto: Proyectos = {
+    id: 0,
+    name: '',
+    description: '',
+    tecnologias: '',
+    linkRepo: '',
+  }
   loading: boolean = false;
   listProyectos: Proyectos[] = []
 
-  constructor( private toastr: ToastrService,
+  constructor(private toastr: ToastrService,
     private _proyectosService: ProyectosService,
     private router: Router,
     private _errorService: ErrorService) { }
@@ -38,25 +41,17 @@ export class EditarProyectosComponent implements OnInit {
   addProyecto() {
 
     // Validamos que el usuario ingrese valores
-    if (this.name == '' || this.description == '' || this.tecnologias == '' || this.linkRepo == '') {
+    if (this.proyecto.name == '' || this.proyecto.description == '' || this.proyecto.tecnologias == '' || this.proyecto.linkRepo == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
     }
 
-    // Creamos el objeto 
-    const proyectos: Proyectos = {
-      name: this.name,
-      description: this.description,
-      tecnologias: this.tecnologias,
-      linkRepo: this.linkRepo
-    }
-
     this.loading = true;
 
-    this._proyectosService.Crear(proyectos).subscribe({
+    this._proyectosService.Crear(this.proyecto).subscribe({
       next: (v) => {
         this.loading = false;
-        this.toastr.success("El proyecto " + this.name + " fue cargado con exito", "Proyecto agregado");
+        this.toastr.success("El proyecto " + this.proyecto.name + " fue cargado con exito", "Proyecto agregado");
         this.router.navigate(['/editar']);
         location.reload()
       },
@@ -67,4 +62,19 @@ export class EditarProyectosComponent implements OnInit {
     })
 
   }
+
+  deleteProyecto(id: number) {
+    this._proyectosService.deleteProyecto(id).subscribe(
+      () => {
+        console.log('Experiencia eliminada correctamente');
+        location.reload()
+        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
+      },
+      (error) => {
+        console.error('Error al eliminar la experiencia', error);
+        // Manejar el error adecuadamente
+      }
+    );
+  }
+
 }

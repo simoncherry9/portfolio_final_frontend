@@ -23,4 +23,9 @@ export class ProyectosService {
     return this.http.get<Proyectos[]>(`${this.myAppUrl}${this, this.myApiUrl}`)
   }
 
+  deleteProyecto(id: number): Observable<any> {
+    const url = `${this.myAppUrl}${this,this.myApiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
 }
