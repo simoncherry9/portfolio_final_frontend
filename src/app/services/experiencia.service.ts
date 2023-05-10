@@ -23,4 +23,9 @@ export class ExperienciasService {
     return this.http.get<Experiencia[]>(`${this.myAppUrl}${this, this.myApiUrl}`)
   }
 
+  deleteExperiencia(id: number): Observable<any> {
+    const url = `${this.myAppUrl}${this,this.myApiUrl}/${id}`;
+    return this.http.delete<any>(url);
+  }
+
 }
