@@ -26,13 +26,13 @@ export class AptitudesComponent implements OnInit {
       const ctx = document.getElementById('myChart') as HTMLCanvasElement;
       const chartData = {
         datasets: [{
-          data: data.map(item => item.porcentaje), 
-          label: 'Aptitudes',
+          data: data.map(item => item.porcentaje),
+          label: 'Nivel',
           backgroundColor: 'rgba(75, 192, 192, 0.2)',
           borderColor: 'rgba(75, 192, 192, 1)',
           borderWidth: 1
         }],
-        labels: data.map(item => item.name) 
+        labels: data.map(item => item.name )
       };
 
       Chart.register(...registerables);
