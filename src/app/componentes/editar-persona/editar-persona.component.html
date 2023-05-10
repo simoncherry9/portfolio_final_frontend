@@ -1,1 +1,13 @@
-<p>editar-persona works!</p>
+<div class="container card text-center mt-3 wrapper animate__animated animate__fadeInDown">
+    <h3 class="mt-3 mb-3">Perfil</h3>
+    <ul class="list-group" style="border-radius: 50px;" *ngFor="let item of listPersonas">
+        <li class="list-group-item text-center" style="background-color: #00b8ff" aria-current="true">{{ item.nombre }}
+            {{ item.apellido }}</li>
+        <li class="list-group-item">{{ item.direccion }}</li>
+        <li class="list-group-item">{{ item.fechaNacimiento }}</li>
+        <li class="list-group-item">{{ item.estadoCivil }}</li>
+        <li class="list-group-item">{{ item.email }}</li>
+        <li class="list-group-item">{{ item.telefono }}</li>
+        <li class="list-group-item">{{ item.profesion }}</li>
+    </ul>
+</div>
