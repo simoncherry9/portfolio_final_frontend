@@ -28,13 +28,11 @@ export class FormularioComponent implements OnInit {
 
   addFormulario() {
 
-    // Validamos que el usuario ingrese valores
     if (this.nombre == '' || this.email == '' || this.descripcion == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
     }
 
-    // Creamos el objeto 
     const formulario: Formulario = {
       nombre: this.nombre,
       email: this.email,

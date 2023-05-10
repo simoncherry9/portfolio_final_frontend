@@ -50,7 +50,6 @@ export class EditarAptitudesComponent {
       next: (v) => {
         this.loading = false;
         this.toastr.success("La aptitud " + this.aptitudes.name + " fue cargada con exito", "Aptitud agregada");
-        this.router.navigate(['/editar']);
         location.reload()
       },
       error: (e: HttpErrorResponse) => {
@@ -63,13 +62,11 @@ export class EditarAptitudesComponent {
   deleteAptitud(id: number) {
     this._aptitudesService.deleteAptitud(id).subscribe(
       () => {
-        console.log('Aptitud eliminada correctamente');
         location.reload()
-        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
+        this.toastr.success("La aptitud " + this.aptitudes.name + " fue eliminada con exito", "Aptitud eliminada");
       },
       (error) => {
-        console.error('Error al eliminar la aptitud', error);
-        // Manejar el error adecuadamente
+        this.toastr.error("La aptitud no pudo eliminarse", "Error");
       }
     );
   }

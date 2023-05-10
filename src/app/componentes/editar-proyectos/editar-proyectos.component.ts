@@ -40,7 +40,6 @@ export class EditarProyectosComponent {
 
   addProyecto() {
 
-    // Validamos que el usuario ingrese valores
     if (this.proyecto.name == '' || this.proyecto.description == '' || this.proyecto.tecnologias == '' || this.proyecto.linkRepo == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
@@ -68,11 +67,10 @@ export class EditarProyectosComponent {
       () => {
         console.log('Experiencia eliminada correctamente');
         location.reload()
-        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
+        this.toastr.success("El proyecto " + this.proyecto.name + " fue eliminado con exito", "Proyecto eliminado");
       },
       (error) => {
-        console.error('Error al eliminar la experiencia', error);
-        // Manejar el error adecuadamente
+        this.toastr.error("El pryecto no pudo eliminarse", "Error");
       }
     );
   }

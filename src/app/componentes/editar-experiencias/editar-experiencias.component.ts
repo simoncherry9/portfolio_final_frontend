@@ -40,7 +40,6 @@ export class EditarExperienciasComponent {
 
   addExperiencia() {
 
-    // Validamos que el usuario ingrese valores
     if (this.experiencia.empresa == '' || this.experiencia.puesto == '' || this.experiencia.descripcion == '' || this.experiencia.fechaFin == '') {
       this.toastr.error("Todos los campos son obligatorios", "Error");
       return;
@@ -65,13 +64,11 @@ export class EditarExperienciasComponent {
   deleteExperiencia(id: number) {
     this._experienciaService.deleteExperiencia(id).subscribe(
       () => {
-        console.log('Experiencia eliminada correctamente');
         location.reload()
-        // Realizar cualquier otra acción necesaria después de eliminar la aptitud
+        this.toastr.success("La experiencia fue eliminada correctamente", "Experiencia eliminada");
       },
       (error) => {
-        console.error('Error al eliminar la experiencia', error);
-        // Manejar el error adecuadamente
+        this.toastr.error("La experiencia no pudo eliminarse", "Error");
       }
     );
   }
