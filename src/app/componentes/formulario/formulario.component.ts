@@ -1,6 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Formulario } from 'src/app/interfaces/formulario';
 import { ErrorService } from 'src/app/services/error.service';
@@ -17,8 +16,7 @@ export class FormularioComponent implements OnInit {
   descripcion: string = '';
   loading: boolean = false;
 
-  constructor(private router: Router,
-    private toastr: ToastrService,
+  constructor(private toastr: ToastrService,
     private _formularioService: FormularioService,
     private _errorService: ErrorService) {} 
 
