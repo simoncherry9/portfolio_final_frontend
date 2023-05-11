@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent },
   { path: '', redirectTo: 'portfolio', pathMatch:'full' },
   { path: 'editar', component:EditarComponent, canActivate:[AuthGuard]},
-  { path: 'registrar-usuario', component:LoginComponent },
   { path: '**', redirectTo: 'portfolio', pathMatch: 'full' },
 
 ];

@@ -11,7 +11,7 @@ export class ProyectosService {
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
-    this.myAppUrl = 'http://localhost:3001/'
+    this.myAppUrl = 'https://apiportfolio.fly.dev/'
     this.myApiUrl = 'api/proyectos'
   }
 
